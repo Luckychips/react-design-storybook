@@ -1,4 +1,4 @@
 export const print = () => {
-    console.log('print');
-    return 'print';
+  console.log('print');
+  return 'print';
 };

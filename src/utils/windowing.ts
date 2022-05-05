@@ -1,3 +1,3 @@
 export const minmax = () => {
-    return 'minmax';
+  return 'minmax';
 };

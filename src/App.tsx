@@ -1,5 +1,5 @@
 import React from 'react';
-import { FormInput } from "@/components/atoms";
+import { FormInput } from '@/components/atoms';
 import logo from './logo.svg';
 import './App.css';
 

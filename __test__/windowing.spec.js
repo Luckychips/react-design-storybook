@@ -1,5 +1,5 @@
-import { minmax } from "@/utils/windowing";
+import { minmax } from '@/utils/windowing';
 
-test("text test", () => {
-    expect('minmax').toBe(minmax());
+test('text test', () => {
+  expect('minmax').toBe(minmax());
 });
