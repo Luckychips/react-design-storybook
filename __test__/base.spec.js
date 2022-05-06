@@ -1,7 +1,7 @@
-import { print } from '@/utils/base';
+import { doPrint } from '@/utils/base';
 
 test('base test', () => {
-  expect('print').toBe(print());
+  expect('print').toBe(doPrint());
 });
 
 //todo - storybook design system
