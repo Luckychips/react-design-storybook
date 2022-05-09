@@ -10,9 +10,12 @@ export default {
   title: 'Design System/Atoms/Button',
   component: Button,
   argTypes: {
-    buttonType: {
+    buttonState: {
       options: ['normal', 'hover', 'active', 'disabled'],
-      control: { type: 'radio' },
+      control: 'radio',
+    },
+    isRound: {
+      control: 'boolean',
     },
   },
 };
@@ -22,6 +25,7 @@ const PageTemplate: ComponentStory<typeof Button> = (args) => (
 );
 export const AsType = PageTemplate.bind({});
 AsType.args = {
-  buttonType: 'normal',
+  buttonState: 'normal',
   label: 'Submit',
+  isRound: true,
 };

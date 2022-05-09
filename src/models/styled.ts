@@ -1,4 +1,8 @@
+import { ButtonType } from '@/variables/ui';
+
 export interface ButtonProps {
-  buttonType?: string;
+  buttonType: ButtonType;
+  buttonState?: string;
   label?: string;
+  isRound?: boolean;
 }
