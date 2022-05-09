@@ -16,21 +16,21 @@ const StyledInlineFigure = styled.figure`
 const Button = (props: StorybookButtonProps) => {
   return (
     <>
-        <StyledInlineFigure>
-            <Submit {...props} buttonType={ButtonType.type1} />
-            <Separator />
-            <Submit {...props} buttonType={ButtonType.type2} />
-            <Separator />
-            <Submit {...props} buttonType={ButtonType.type3} />
-            <Separator />
-            <Submit {...props} buttonType={ButtonType.type4} />
-        </StyledInlineFigure>
-        <StyledInlineFigure>
-            <Submit {...props} buttonType={ButtonType.type5} />
-            <Separator />
-            <Submit {...props} buttonType={ButtonType.type6} />
-            <Separator />
-        </StyledInlineFigure>
+      <StyledInlineFigure>
+        <Submit {...props} buttonType={ButtonType.type1} />
+        <Separator />
+        <Submit {...props} buttonType={ButtonType.type2} />
+        <Separator />
+        <Submit {...props} buttonType={ButtonType.type3} />
+        <Separator />
+        <Submit {...props} buttonType={ButtonType.type4} />
+      </StyledInlineFigure>
+      <StyledInlineFigure>
+        <Submit {...props} buttonType={ButtonType.type5} />
+        <Separator />
+        <Submit {...props} buttonType={ButtonType.type6} />
+        <Separator />
+      </StyledInlineFigure>
     </>
   );
 };
