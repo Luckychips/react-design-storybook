@@ -163,7 +163,7 @@ const Submit = ({
   isRound = true,
 }: ButtonProps) => {
   const getButtonState = () => {
-    return buttonState ? `-${buttonState}` : '';
+    return buttonState ? `-${buttonState.toLowerCase()}` : '';
   };
 
   const getButtonRoundOption = () => {

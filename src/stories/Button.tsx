@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from '@emotion/styled';
-import { ButtonType } from '@/variables/ui';
+import { BUTTON_TYPE } from '@/variables/ui';
 import { Separator, Submit } from '@/components/atoms';
 
 interface StorybookButtonProps {
@@ -17,18 +17,18 @@ const Button = (props: StorybookButtonProps) => {
   return (
     <>
       <StyledInlineFigure>
-        <Submit {...props} buttonType={ButtonType.type1} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE1} />
         <Separator />
-        <Submit {...props} buttonType={ButtonType.type2} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE2} />
         <Separator />
-        <Submit {...props} buttonType={ButtonType.type3} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE3} />
         <Separator />
-        <Submit {...props} buttonType={ButtonType.type4} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE4} />
       </StyledInlineFigure>
       <StyledInlineFigure>
-        <Submit {...props} buttonType={ButtonType.type5} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE5} />
         <Separator />
-        <Submit {...props} buttonType={ButtonType.type6} />
+        <Submit {...props} buttonType={BUTTON_TYPE.TYPE6} />
         <Separator />
       </StyledInlineFigure>
     </>

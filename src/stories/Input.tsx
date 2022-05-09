@@ -1,19 +1,18 @@
 import React from 'react';
 import { FormInput, Separator } from '@/components/atoms';
+import { THEME_SIZE } from '@/variables/ui';
 
 interface StorybookInputProps {
-  test: string;
+  isDisabled: boolean;
+  themeSize: THEME_SIZE;
 }
 
 const Input = (props: StorybookInputProps) => {
   return (
     <>
-      <FormInput />
+      <FormInput {...props} />
       <Separator />
-      <FormInput />
-      <Separator />
-      <FormInput />
-      <Separator />
+      <FormInput {...props} />
     </>
   );
 };

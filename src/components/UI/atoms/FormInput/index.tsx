@@ -1,54 +1,97 @@
 import React, { useRef, useState } from 'react';
 import styled from '@emotion/styled';
+import { InputProps } from '@/models/styled';
+import { THEME_SIZE } from '@/variables/ui';
 
 const StyledWrapper = styled.section`
   position: relative;
+
+  &.sm {
+    input {
+      font-size: 12px;
+    }
+  }
+
+  &.md { 
+    input {
+      font-size: 14px;
+    }
+  }
+
+  &.lg { 
+    input {
+      font-size: 14px;
+    }
+  }
 `;
 
 const StyledPlaceholder = styled.div`
   position: absolute;
   top: 12px;
   left: 17px;
-  font-size: 14px;
   color: #999999;
   transition-property: top, font;
   transition-duration: 0.2s, 0.2s;
 
-  &.has-focus {
-    top: 3px;
-    font-size: 10px;
-    color: #26b7d5;
+  &.is-disabled {
+    color: #999999;
+
+    &:hover {
+      cursor: not-allowed;
+    }
   }
 
-  &.has-error {
-    color: #ff8a8a;
+  &:not(.is-disabled) {
+    &.has-focus {
+      top: 3px;
+      font-size: 8px;
+      color: #26b7d5;
+    }
+
+    &.has-error {
+      color: #ff8a8a;
+    }
   }
 `;
 
 const StyledInput = styled.input`
   max-height: 40px;
-  padding: 10px 0 10px 16px;
+  padding: 14px 0 6px 16px;
   border-radius: 5px;
   border: 1px solid #e0e0e0;
 
-  &:not(.has-error) {
-    &:hover {
-      border: 1px solid #555 !important;
-    }
+  &.is-disabled {
+    outline: none;
+    background-color: #eeeeee;
 
-    &:focus {
-      outline: none;
-      border: 1px solid #26b7d5 !important;
+    &:hover {
+      cursor: not-allowed;
     }
   }
 
-  &.has-error {
-    outline: none;
-    border: 1px solid #ff8a8a !important;
+  &:not(.is-disabled) {
+    &:not(.has-error) {
+      &:hover {
+        border: 1px solid #555 !important;
+      }
+
+      &:focus {
+        outline: none;
+        border: 1px solid #26b7d5 !important;
+      }
+    }
+
+    &.has-error {
+      outline: none;
+      border: 1px solid #ff8a8a !important;
+    }
   }
 `;
 
-const FormInput = () => {
+const FormInput = ({
+  isDisabled = false,
+  themeSize = THEME_SIZE.SMALL,
+}: InputProps) => {
   const inputRef = useRef<HTMLInputElement>(null);
   const [isOnFocus, setIsOnFocus] = useState(false);
   const [hasError, setHasError] = useState(false);
@@ -72,6 +115,27 @@ const FormInput = () => {
     }
   };
 
+  const getThemeSize = () => {
+    let size = 'sm';
+    switch (themeSize) {
+      case THEME_SIZE.SMALL:
+        size = 'sm';
+        break;
+      case THEME_SIZE.MEDIUM:
+        size = 'md';
+        break;
+      case THEME_SIZE.LARGE:
+        size = 'lg';
+        break;
+    }
+
+    return size;
+  };
+
+  const updateDisableClassName = () => {
+    return isDisabled ? 'is-disabled' : '';
+  };
+
   const updateFocusClassName = () => {
     return isOnFocus ? 'has-focus' : '';
   };
@@ -81,9 +145,9 @@ const FormInput = () => {
   };
 
   return (
-    <StyledWrapper>
+    <StyledWrapper className={`${getThemeSize()}`}>
       <StyledPlaceholder
-        className={`${updateFocusClassName()} ${updateErrorClassName()}`}
+        className={`${updateDisableClassName()} ${updateFocusClassName()} ${updateErrorClassName()}`}
       >
         placeholder
       </StyledPlaceholder>
@@ -91,7 +155,7 @@ const FormInput = () => {
         ref={inputRef}
         type="text"
         value={value}
-        className={`${updateErrorClassName()}`}
+        className={`${updateDisableClassName()} ${updateErrorClassName()}`}
         onChange={(e) => onChange(e.target.value)}
         onFocus={onFocus}
         onBlur={onBlur}
