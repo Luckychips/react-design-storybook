@@ -1,4 +1,5 @@
 import React from 'react';
+import { action } from '@storybook/addon-actions';
 import styled from '@emotion/styled';
 import { ButtonProps } from '@/models/styled';
 
@@ -172,6 +173,7 @@ const Submit = ({
   return (
     <StyledButton
       className={`${buttonType}${getButtonState()} ${getButtonRoundOption()}`}
+      onClick={action('clicked!')}
     >
       {label}
     </StyledButton>
