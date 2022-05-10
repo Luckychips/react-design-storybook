@@ -1,53 +1,54 @@
 import React from 'react';
 import styled from '@emotion/styled';
 import { InlineWrapper } from '@/components/atoms';
-import { CheckBox } from '@/components/molecules';
+import { RadioButton } from '@/components/molecules';
+import { RadioButtonGroup } from '@/components/organisms';
 
 const StyledLabel = styled.label`
   color: #a2a2a2;
   font-size: 12px;
   font-weight: 400;
   margin-right: 20px;
-  width: 20px;
+  width: 80px;
 `;
 
 const StyledSpacing = styled.div`
   padding: 15px;
 `;
 
-const Checker = () => {
+const Radios = () => {
   return (
     <>
       <InlineWrapper>
         <StyledLabel>On</StyledLabel>
-        <CheckBox label="Normal" hasEvent={false} isCheckedFromPassed />
-        <CheckBox
+        <RadioButton label="Normal" hasEvent={false} isOnSelected />
+        <RadioButton
           label="Hover"
           hasEvent={false}
-          isCheckedFromPassed
+          isOnSelected
           isOnHover
         />
-        <CheckBox
+        <RadioButton
           label="Disable"
           hasEvent={false}
-          isCheckedFromPassed
+          isOnSelected
           isDisabled
         />
       </InlineWrapper>
       <StyledSpacing />
       <InlineWrapper>
         <StyledLabel>Off</StyledLabel>
-        <CheckBox label="Normal" hasEvent={false} />
-        <CheckBox label="Hover" hasEvent={false} isOnHover />
-        <CheckBox label="Disable" hasEvent={false} isDisabled />
+        <RadioButton label="Normal" hasEvent={false} />
+        <RadioButton label="Hover" hasEvent={false} isOnHover />
+        <RadioButton label="Disable" hasEvent={false} isDisabled />
       </InlineWrapper>
       <StyledSpacing />
       <InlineWrapper>
-        <StyledLabel>Active</StyledLabel>
-        <CheckBox label="CheckBox" />
+        <StyledLabel>Group Active</StyledLabel>
+        <RadioButtonGroup />
       </InlineWrapper>
     </>
   );
 };
 
-export default Checker;
+export default Radios;

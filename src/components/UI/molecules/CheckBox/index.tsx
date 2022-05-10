@@ -86,7 +86,7 @@ const CheckBox = ({
   const [isChecked, setIsChecked] = useState(false);
 
   const onClick = () => {
-    if (!isDisabled) {
+    if (!isDisabled && hasEvent) {
       setIsChecked(!isChecked);
     }
   };

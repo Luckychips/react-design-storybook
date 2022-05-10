@@ -7,6 +7,8 @@ const StyledWrapper = styled.div`
   align-items: center;
 `;
 
-export default ({ className, children }: StyledComponentProps) => {
+const InlineWrapper = ({ className, children }: StyledComponentProps) => {
   return <StyledWrapper>{children}</StyledWrapper>;
 };
+
+export default InlineWrapper;
