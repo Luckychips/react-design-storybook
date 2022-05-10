@@ -11,3 +11,11 @@ export interface InputProps {
   isDisabled?: boolean;
   themeSize: THEME_SIZE;
 }
+
+export interface CheckBoxProps {
+  label: string;
+  isCheckedFromPassed?: boolean;
+  isDisabled?: boolean;
+  isOnHover?: boolean;
+  hasEvent?: boolean;
+}

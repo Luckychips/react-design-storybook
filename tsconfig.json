@@ -20,5 +20,6 @@
       "@/*": ["src/*"]
     }
   },
-  "include": ["src"]
+  "include": ["src", "@types", "types"],
+  "exclude": ["node_modules", "build", "coverage"]
 }

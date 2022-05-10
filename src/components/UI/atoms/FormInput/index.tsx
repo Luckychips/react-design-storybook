@@ -12,13 +12,13 @@ const StyledWrapper = styled.section`
     }
   }
 
-  &.md { 
+  &.md {
     input {
       font-size: 14px;
     }
   }
 
-  &.lg { 
+  &.lg {
     input {
       font-size: 14px;
     }
@@ -106,6 +106,7 @@ const FormInput = ({
   };
 
   const onFocus = () => {
+    inputRef.current!.focus();
     setIsOnFocus(true);
   };
 
@@ -148,6 +149,7 @@ const FormInput = ({
     <StyledWrapper className={`${getThemeSize()}`}>
       <StyledPlaceholder
         className={`${updateDisableClassName()} ${updateFocusClassName()} ${updateErrorClassName()}`}
+        onClick={onFocus}
       >
         placeholder
       </StyledPlaceholder>
