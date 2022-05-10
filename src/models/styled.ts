@@ -34,3 +34,7 @@ export interface RadioButtonProps {
   item?: KeyValue;
   onSelect?: (obj: KeyValue) => void;
 }
+
+export interface SwitchProps {
+  isActive: boolean;
+}

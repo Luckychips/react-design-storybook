@@ -22,18 +22,8 @@ const Radios = () => {
       <InlineWrapper>
         <StyledLabel>On</StyledLabel>
         <RadioButton label="Normal" hasEvent={false} isOnSelected />
-        <RadioButton
-          label="Hover"
-          hasEvent={false}
-          isOnSelected
-          isOnHover
-        />
-        <RadioButton
-          label="Disable"
-          hasEvent={false}
-          isOnSelected
-          isDisabled
-        />
+        <RadioButton label="Hover" hasEvent={false} isOnSelected isOnHover />
+        <RadioButton label="Disable" hasEvent={false} isOnSelected isDisabled />
       </InlineWrapper>
       <StyledSpacing />
       <InlineWrapper>
