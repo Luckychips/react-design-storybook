@@ -83,6 +83,7 @@
     "eslint-plugin-react": "^7.29.4",
     "prettier": "^2.6.2",
     "react-app-rewired": "^2.2.1",
+    "storybook-zeplin": "^1.7.2",
     "webpack": "^5.72.0"
   }
 }

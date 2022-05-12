@@ -23,12 +23,12 @@ const StyledBack = styled.div`
 
   &.on {
     animation: fadein 1s;
-   animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
 
   &.off {
     animation: fadeout 1s;
-       animation-fill-mode: forwards;
+    animation-fill-mode: forwards;
   }
 
   @keyframes fadein {
@@ -79,13 +79,13 @@ const StyledFront = styled.div`
       left: 15px;
     }
   }
-  
+
   @keyframes colorOff {
     from {
-      background-color: #82dbed; 
+      background-color: #82dbed;
     }
     to {
-      background-color: #999999;  
+      background-color: #999999;
     }
   }
 
@@ -97,13 +97,13 @@ const StyledFront = styled.div`
       left: -1px;
     }
   }
-  
-    @keyframes colorOn {
+
+  @keyframes colorOn {
     from {
-      background-color: #999999; 
+      background-color: #999999;
     }
     to {
-      background-color: #82dbed;  
+      background-color: #82dbed;
     }
   }
 `;
